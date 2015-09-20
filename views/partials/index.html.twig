@@ -1,53 +1,37 @@
 {% extends 'layout.html.twig' %}
 {% block head %}
     {{parent()}}
-    <script type="text/javascript">
-      var youtubeVideos = {{youtubeVideos|json_encode|raw}};
-      var embedCodeVideos = {{embedCodeVideos|json_encode|raw}};
-      var wordpressPosts = {{wordpressPosts|json_encode|raw}};
-    </script>
     <script type="text/javascript" src="js/views/index.js"></script>
 {% endblock %}
 {% block body %}
 	{{ parent() }}
-    <div class="container" id="home-header">
-        <div id="logo-main"></div>
-        <div id="home-info"><button class="btn btn-lg btn-success pull-right donate"><span class="glyphicon glyphicon-gift"></span> Donate</button> <p>Teaching fundamental skills in one of the great crafts empowers people.<br /> When those people are underprivileged women, it has the power to change their lives.</p></div>
-    </div>
     <div class="container contentBody">
-        <div class="col-xs-6">
-
-
-            <h1>Featured Videos</h1>
-            <section id="embedCodeVideos"></section>
-            <h1>Interview Videos</h1>
-            <section id="youtubeVideos"></section>
+      <section>
+        <h1>News</h1>
+        <p>Planet Gates LP Now Available</p>
+        <div class="column">
+          <iframe style="border: 0; width: 350px; height: 470px;" src="http://bandcamp.com/EmbeddedPlayer/album=4040365101/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless><a href="http://mailthehorse.bandcamp.com/album/planet-gates">Planet Gates by Mail the Horse</a></iframe>
         </div>
-        <div class="col-xs-6">
-
-            <h1>From Our Blog</h1>
-            <section id="wordpressPosts"></section>
+        <div class="column">
+            <iframe width="540" height="304" src="https://www.youtube.com/embed/wg1VvYCGIwU" frameborder="0" allowfullscreen></iframe>
         </div>
+      </section>
+      <section>
+        <h1>Show dates</h1>
+        <script type='text/javascript' src='http://widget.bandsintown.com/javascripts/bit_widget.js'></script><a href="http://www.bandsintown.com/Mail%20the%20Horse" class="bit-widget-initializer" data-artist="Mail the Horse">Mail the Horse Tour Dates</a>
+      </section>
+      <section class="column">
+        <h1>Instagram</h1>
+        {% for post in instagramData %}
+          {{post.html|raw}}<br />
+        {% endfor %}
+      </section>
+      <section class="column">
+        <h1>Twitter</h1>
+        <a class="twitter-timeline" href="https://twitter.com/MailtheHorse" data-widget-id="645706018031210497">Tweets by @MailtheHorse</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      </section>
     </div>
-    <script type="text/template" id="post-youtubeVideos">
-      <div class="card youtube">
-        <iframe width="<%-width%>" height="<%-height%>" src="https://www.youtube.com/embed/<%-id%>" frameborder="0" allowfullscreen></iframe>
-        <blockquote><%-data.snippet.description%></blockquote>
-      </div>
-    </script>
-    <script type="text/template" id="post-wordpressPosts">
-      <div class="card wordpress">
-        <h2><%=data.title.rendered%></h2>
-        <% if (data.featured_image.media_details) { %>
-          <% if (data.featured_image.media_details.sizes['post-thumbnail']) { %>
-            <img src="<%-data.featured_image.media_details.sizes['post-thumbnail'].source_url%>" />
-          <% } else { %>
-            <img src="<%-data.featured_image.source_url%>" />
-          <% } %>
-        <% } %>
-        <blockquote><%=data.excerpt.rendered%></blockquote>
-        <p><a class="btn btn-default btn-sm pull-right" href="<%-data.link%>" target="_blank"><img src="img/logo-wordpress-24.png" /> View</a></p>
-      </div><br />
-    </script>
+
 {% endblock %}
 

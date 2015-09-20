@@ -56,17 +56,13 @@ $app->get("/", $authenticate($app), function () use ($app) {
     // apc_clear_cache();
 
     $configs = $app->container->get('configs');
-    $youtubeData = new YoutubeData($configs['google_api']['key']);
-    $wordpressData = new WordpressData($configs['wordpress_blog']['base_url']);
+    $instagramData = new InstagramData($configs['instagram']['client_id']);
     $app->render(
         'partials/index.html.twig',
         array(
             "configs" => $configs,
             "section" => "home",
-            "embedCodes" => $configs['featured']['videos']['embed_codes'],
-            "youtubeVideos" => $youtubeData->getVideos($configs['featured']['videos']['youtube']),
-            "embedCodeVideos" => $configs['featured']['videos']['embed_codes'],
-            "wordpressPosts" => $wordpressData->getPosts($configs['featured']['blogs']['wordpress'])
+            "instagramData" => $instagramData->getRecentMedia($configs['instagram']['user_id'])
         ),
         200
     );
@@ -96,6 +92,52 @@ $app->get("/contact", $authenticate($app), function () use ($app) {
         ),
         200
     );
+});
+
+$app->get("/music", $authenticate($app), function () use ($app) {
+
+    $configs = $app->container->get('configs');
+    $app->render(
+        'partials/music.html.twig',
+        array(
+            "configs" => $configs,
+            "section" => "music"
+        ),
+        200
+    );
+});
+
+$app->get("/newsletter", $authenticate($app), function () use ($app) {
+
+    $configs = $app->container->get('configs');
+    $app->render(
+        'partials/newsletter.html.twig',
+        array(
+            "configs" => $configs,
+            "section" => "newsletter"
+        ),
+        200
+    );
+});
+
+
+$app->get("/shows", $authenticate($app), function () use ($app) {
+
+    $configs = $app->container->get('configs');
+    $app->render(
+        'partials/shows.html.twig',
+        array(
+            "configs" => $configs,
+            "section" => "shows"
+        ),
+        200
+    );
+});
+
+$app->get("/clearcache", $authenticate($app), function () use ($app) {
+    exec("rm -rf " . APPLICATION_PATH . "/cache/*");
+    echo "cache cleared";
+    $app->redirect('/');
 });
 
 

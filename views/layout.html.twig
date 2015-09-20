@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
   <head>
-    <title>Fearless Beauty</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Mail the Horse</title>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
@@ -11,7 +14,6 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/site.css">
-    <link rel="stylesheet" href="/css/site-ext.css">
     <link href='https://fonts.googleapis.com/css?family=Magra' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Neuton:400,700' rel='stylesheet' type='text/css'>
 
@@ -32,6 +34,20 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/img/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+
+    <meta name="description" content="Mail the Horse is a shimmering booze-soaked Grunge Gospel/Country Blues rock band based out of Brooklyn, NY. Planet Gates now available for Pre-Order."/>
+    <link rel="canonical" href="http://www.mailthehorse.com/" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Mail the Horse - Planet Gates LP Now Available" />
+    <meta property="og:description" content="Mail the Horse is a shimmering booze-soaked Grunge Gospel/Country Blues rock band based out of Brooklyn, NY. Planet Gates now available for Pre-Order." />
+    <meta property="og:url" content="http://www.mailthehorse.com/" />
+    <meta property="og:site_name" content="Mail the Horse" />
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:description" content="Mail the Horse is a shimmering booze-soaked Grunge Gospel/Country Blues rock band based out of Brooklyn, NY. Planet Gates now available for Pre-Order."/>
+    <meta name="twitter:title" content="Mail the Horse - Planet Gates LP Now Available"/>
+    <meta name="twitter:domain" content="Mail the Horse"/>
+    <script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"WebSite","url":"http:\/\/www.mailthehorse.com\/","name":"Mail the Horse","potentialAction":{"@type":"SearchAction","target":"http:\/\/www.mailthehorse.com\/?s={search_term}","query-input":"required name=search_term"}}</script>
 
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -71,36 +87,23 @@
     {% block head %}{% endblock %}
   </head>
   <body data-grid-framework="bo" data-grid-color="blue" data-grid-opacity="0.5" data-grid-zindex="10" data-grid-gutterwidth="30px" data-grid-nbcols="16">
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a href="/" id="logo-mini"><img src="img/logo-30x40.png" /></a> Fearless Beauty
-      </div>
-      <div id="navbar" class="collapse navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li {% if section=="home" %}class="active"{% endif %}><a href="/">Home</a></li>
-          <li {% if section=="about" %}class="active"{% endif %}><a href="/about">About</a></li>
-          <li><a href="{{ configs.wordpress_blog.base_url}}" target="_blank">Blog</a></li>
-          <li><a href="https://www.youtube.com/channel/UCTL0-B7GL1wQfcAP2bepTig" target="_blank">Videos</a></li>
-          <li {% if section=="contact" %}class="active"{% endif %}><a href="/contact">Contact</a></li>
-          <li><button class="btn btn-success btn-sm donate"><span class="glyphicon glyphicon-gift"></span> Donate</button></li>
-        </ul>
-      </div><!--/.nav-collapse -->
+  <div id="menu" class="container">
+    <img src="/img/1200/logo.png" />
+    <div id="menu_items">
+      <a href="/" {% if section=="home" %}class="active"{% endif %}><img src="/img/1200/menu.home.png" /></a>
+      <a href="/music" {% if section=="music" %}class="active"{% endif %}><img src="/img/1200/menu.music.png" /></a>
+      <a href="/about" {% if section=="about" %}class="active"{% endif %}><img src="/img/1200/menu.about.png" /></a>
+      <a href="/shows" {% if section=="shows" %}class="active"{% endif %}><img src="/img/1200/menu.shows.png" /></a>
+      <a href="/newsletter" {% if section=="newsletter" %}class="active"{% endif %}><img src="/img/1200/menu.newsletter.png" /></a>
+      <a href="/contact" {% if section=="contact" %}class="active"{% endif %}><img src="/img/1200/menu.contact.png" /></a>
     </div>
-  </nav>
-  <div class="container">
+  </div>
     {% block body %}{% endblock %}
-    <nav class="navbar navbar-inverse footer">
-      <div class="container contentFooter">
-          &copy 2015 Fearless Beauty
-      </div>
-    </nav>
+    <div class="container contentFooter">
+        <section>
+          &copy 2015 Mail the Horse
+        </section>
+    </div>
   </div>
   </body>
 </html>

@@ -1,0 +1,12 @@
+{% extends 'layout.html.twig' %}
+{% block head %}
+    {{parent()}}
+{% endblock %}
+{% block body %}
+	{{ parent() }}
+    <div class="container contentBody">
+      <h1>Shows</h1>
+      <script type='text/javascript' src='http://widget.bandsintown.com/javascripts/bit_widget.js'></script><a href="http://www.bandsintown.com/Mail%20the%20Horse" class="bit-widget-initializer" data-artist="Mail the Horse">Mail the Horse Tour Dates</a>
+    </div>
+{% endblock %}
+
