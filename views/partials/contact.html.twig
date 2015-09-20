@@ -5,32 +5,34 @@
 {% block body %}
 	{{ parent() }}
     <div class="container contentBody">
-      <h1>Contact</h1>
       <section>
+        <header>
+          <h1>Contact</h1>
+        </header>
         <p>For booking or other info ...</p>
-        <form action="/contact" class="form-horizontal  col-sm-8">
-          <div class="form-group">
-            <label for="email">Email address</label>
-            <input type="email" class="form-control" name="email" id="email" placeholder="Email"/>
-          </div>
-          <div class="form-group">
-            <label for="first_name">First name</label>
-            <input type="text" class="form-control" name="first_name" id="first_name" placeholder="First name"/>
-          </div>
-          <div class="form-group">
-            <label for="last_name">Last name</label>
-            <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Last name"/>
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea name="message" id="message" class="form-control" placeholder="Message" rows="8"></textarea>
-          </div>
-          <div class="form-group">
-            <div class="col-sm-offset-11">
-                <button type="submit" class="btn btn-info">Send</button>
+          <form action="/contact" class="form-horizontal  col-sm-8" id="contact_form">
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" class="form-control" name="email" id="email" placeholder="Email"/>
             </div>
-          </div>
-        </form>
+            <div class="form-group">
+              <label for="first_name">First name</label>
+              <input type="text" class="form-control" name="first_name" id="first_name" placeholder="First name"/>
+            </div>
+            <div class="form-group">
+              <label for="last_name">Last name</label>
+              <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Last name"/>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea name="message" id="message" class="form-control" placeholder="Message" rows="8"></textarea>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-11">
+                  <button type="submit" class="btn btn-info">Send</button>
+              </div>
+            </div>
+          </form>
       </section>
     </div>
 {% endblock %}

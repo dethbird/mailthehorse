@@ -14,8 +14,8 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/site.css">
-    <link href='https://fonts.googleapis.com/css?family=Magra' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Neuton:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Quicksand:400,700,300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Alegreya+SC:400,900' rel='stylesheet' type='text/css'>
 
     <link rel="apple-touch-icon" sizes="57x57" href="/img/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/img/favicon/apple-icon-60x60.png">
@@ -88,14 +88,24 @@
   </head>
   <body data-grid-framework="bo" data-grid-color="blue" data-grid-opacity="0.5" data-grid-zindex="10" data-grid-gutterwidth="30px" data-grid-nbcols="16">
   <div id="menu" class="container">
-    <img src="/img/1200/logo.png" />
+    <div id="newsletter_form">
+      <form action="/newsletter" class="form-inline  col-sm-8">
+        <div class="form-group">
+          <label for="email">Newsletter: </label><br />
+          <input type="email" class="form-control input-sm" name="email" id="email" placeholder="Email"/> <button type="submit" class="btn btn-default btn-sm">Subscribe</button>
+        </div>
+      </form>
+    </div>
+    <a href="/"><img src="/img/1200/logo.png" /></a>
     <div id="menu_items">
-      <a href="/" {% if section=="home" %}class="active"{% endif %}><img src="/img/1200/menu.home.png" /></a>
-      <a href="/music" {% if section=="music" %}class="active"{% endif %}><img src="/img/1200/menu.music.png" /></a>
-      <a href="/about" {% if section=="about" %}class="active"{% endif %}><img src="/img/1200/menu.about.png" /></a>
-      <a href="/shows" {% if section=="shows" %}class="active"{% endif %}><img src="/img/1200/menu.shows.png" /></a>
-      <a href="/newsletter" {% if section=="newsletter" %}class="active"{% endif %}><img src="/img/1200/menu.newsletter.png" /></a>
-      <a href="/contact" {% if section=="contact" %}class="active"{% endif %}><img src="/img/1200/menu.contact.png" /></a>
+
+      <a href="/music" {% if section=="music" %}class="active"{% endif %}>Music.</a>
+      <a href="/about" {% if section=="about" %}class="active"{% endif %}>About.</a>
+      <a href="/shows" {% if section=="shows" %}class="active"{% endif %}>Shows.</a>
+      <a href="/contact" {% if section=="contact" %}class="active"{% endif %}>Contact.</a>
+      <a href="http://instagram.com/mailthehorse" target="_blank"><img src="/img/1200/instagram-32.png"></a>
+      <a href="http://facebook.com/mailthehorse" target="_blank"><img src="/img/1200/facebook-3-32.png"></a>
+      <a href="http://twitter.com/mailthehorse" target="_blank"><img src="/img/1200/twitter-32.png"></a>
     </div>
   </div>
     {% block body %}{% endblock %}

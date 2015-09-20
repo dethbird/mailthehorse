@@ -6,32 +6,51 @@
 {% block body %}
 	{{ parent() }}
     <div class="container contentBody">
-      <section>
-        <h1>News</h1>
-        <p>Planet Gates LP Now Available</p>
-        <div class="column">
-          <iframe style="border: 0; width: 350px; height: 470px;" src="http://bandcamp.com/EmbeddedPlayer/album=4040365101/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless><a href="http://mailthehorse.bandcamp.com/album/planet-gates">Planet Gates by Mail the Horse</a></iframe>
-        </div>
-        <div class="column">
-            <iframe width="540" height="304" src="https://www.youtube.com/embed/wg1VvYCGIwU" frameborder="0" allowfullscreen></iframe>
-        </div>
-      </section>
-      <section>
-        <h1>Show dates</h1>
-        <script type='text/javascript' src='http://widget.bandsintown.com/javascripts/bit_widget.js'></script><a href="http://www.bandsintown.com/Mail%20the%20Horse" class="bit-widget-initializer" data-artist="Mail the Horse">Mail the Horse Tour Dates</a>
-      </section>
-      <section class="column">
-        <h1>Instagram</h1>
-        {% for post in instagramData %}
-          {{post.html|raw}}<br />
-        {% endfor %}
-      </section>
-      <section class="column">
-        <h1>Twitter</h1>
-        <a class="twitter-timeline" href="https://twitter.com/MailtheHorse" data-widget-id="645706018031210497">Tweets by @MailtheHorse</a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-      </section>
-    </div>
 
+      <div class="column-left pull-left">
+
+        <section>
+          <header>
+            <h1>Shows</h1>
+          </header>
+          <script type='text/javascript' src='http://widget.bandsintown.com/javascripts/bit_widget.js'></script><a href="http://www.bandsintown.com/Mail%20the%20Horse" class="bit-widget-initializer" data-artist="Mail the Horse" data-width="350px">Mail the Horse Tour Dates</a>
+        </section>
+
+        <section>
+          <header>
+            <h1>On Instagram</h1>
+          </header>
+          {% for post in instagramData %}
+            {{post.html|raw}}<br />
+          {% endfor %}
+        </section>
+
+        <section>
+          <header>
+            <h1>On Twitter</h1>
+          </header>
+          <a class="twitter-timeline" href="https://twitter.com/MailtheHorse" data-widget-id="645706018031210497" width="340" height="800" data-chrome="nofooter noborders noscrollbar">Tweets by @MailtheHorse</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </section>
+        <br />
+      </div>
+
+
+      <div class="column pull-right">
+        <section>
+          <header>
+            <h1>News</h1>
+          </header>
+          <p>Planet Gates LP Now Available</p>
+          <div>
+            <iframe style="border: 0; width: 350px; height: 470px;" src="http://bandcamp.com/EmbeddedPlayer/album=4040365101/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless><a href="http://mailthehorse.bandcamp.com/album/planet-gates">Planet Gates by Mail the Horse</a></iframe>
+          </div>
+          <div>
+            <iframe width="540" height="304" src="https://www.youtube.com/embed/wg1VvYCGIwU" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </section>
+      </div>
+
+    </div>
 {% endblock %}
 
