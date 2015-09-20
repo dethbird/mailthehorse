@@ -1,0 +1,26 @@
+wordpress_blog:
+  base_url: "http://fearlessbeautyblog.artistcontrolbox.com"
+google_api:
+  key: "AIzaSyCybIgvVt-vmF47yFzmKqGYXHe8r1LOzJs"
+instagram:
+  client_id: "REPLACE_ME"
+featured:
+  videos:
+    youtube:
+      - "-r1pSe4-06M"
+      - "EcaXjeQF-eg"
+      - "q4xK7A9mPvo"
+      - "wdsFjOeISYM"
+    embed_codes:
+      - >
+        <script type="text/javascript" charset="UTF-8" src="http://www.nbcnewyork.com/portableplayer/?cmsID=279636812&videoID=ZuMzlOULpTKI&origin=nbcnewyork.com&sec=on-air&subsec=as-seen-on&width=500&height=360"></script>
+  blogs:
+    wordpress:
+      - 794
+      - 121
+      - 778
+  press:
+    -
+      title: "Folica Blog: A Different Kind of Hair Inspiration."
+      url: "http://www.folica.com/hair-101/lifestyle/a-different-kind-of-hair-inspiration/"
+      date: "March 8, 2015"
