@@ -52,6 +52,7 @@ a.active {
     background-color: #ffedd0;
 }
 .container.contentBody {
+    padding-top: 100px;
     min-height: 500px;
     color: #444;
     padding: 0px 25px 0px 25px;
@@ -78,9 +79,17 @@ a.active {
 #contact_form {
     padding: 35px;
 }
-
-#menu {
+#main {
+    padding-top: 279px;
+}
+#menu_container {
+    width: 100%;
+    top: 0px;
+    z-index: 100;
+    position: fixed;
     text-align: center;
+}
+#menu {
     background-image: url('../img/1200/menu.background.jpg');
     padding: 10px 0px 10px 0px;
 }

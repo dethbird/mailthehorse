@@ -87,33 +87,36 @@
     {% block head %}{% endblock %}
   </head>
   <body data-grid-framework="bo" data-grid-color="blue" data-grid-opacity="0.5" data-grid-zindex="10" data-grid-gutterwidth="30px" data-grid-nbcols="16">
-  <div id="menu" class="container">
-    <div id="newsletter_form">
-      <form action="/newsletter" class="form-inline  col-sm-8">
-        <div class="form-group">
-          <label for="email">Newsletter: </label><br />
-          <input type="email" class="form-control input-sm" name="email" id="email" placeholder="Email"/> <button type="submit" class="btn btn-default btn-sm">Subscribe</button>
-        </div>
-      </form>
-    </div>
-    <a href="/"><img src="/img/1200/logo.png" /></a>
-    <div id="menu_items">
+  <div id="menu_container">
+    <div class="container" id="menu">
+      <div id="newsletter_form">
+        <form action="/newsletter" class="form-inline  col-sm-8">
+          <div class="form-group">
+            <label for="email">Newsletter: </label><br />
+            <input type="email" class="form-control input-sm" name="email" id="email" placeholder="Email"/> <button type="submit" class="btn btn-default btn-sm">Subscribe</button>
+          </div>
+        </form>
+      </div>
+      <a href="/"><img src="/img/1200/logo.png" /></a>
+      <div id="menu_items">
 
-      <a href="/music" {% if section=="music" %}class="active"{% endif %}>Music.</a>
-      <a href="/about" {% if section=="about" %}class="active"{% endif %}>About.</a>
-      <a href="/shows" {% if section=="shows" %}class="active"{% endif %}>Shows.</a>
-      <a href="/contact" {% if section=="contact" %}class="active"{% endif %}>Contact.</a>
-      <a href="http://instagram.com/mailthehorse" target="_blank"><img src="/img/1200/instagram-32.png"></a>
-      <a href="http://facebook.com/mailthehorse" target="_blank"><img src="/img/1200/facebook-3-32.png"></a>
-      <a href="http://twitter.com/mailthehorse" target="_blank"><img src="/img/1200/twitter-32.png"></a>
+        <a href="/music" {% if section=="music" %}class="active"{% endif %}>Music.</a>
+        <a href="/about" {% if section=="about" %}class="active"{% endif %}>About.</a>
+        <a href="/shows" {% if section=="shows" %}class="active"{% endif %}>Shows.</a>
+        <a href="/contact" {% if section=="contact" %}class="active"{% endif %}>Contact.</a>
+        <a href="http://instagram.com/mailthehorse" target="_blank"><img src="/img/1200/instagram-32.png"></a>
+        <a href="http://facebook.com/mailthehorse" target="_blank"><img src="/img/1200/facebook-3-32.png"></a>
+        <a href="http://twitter.com/mailthehorse" target="_blank"><img src="/img/1200/twitter-32.png"></a>
+      </div>
     </div>
   </div>
+  <div id="main">
     {% block body %}{% endblock %}
-    <div class="container contentFooter">
-        <section>
-          &copy 2015 Mail the Horse
-        </section>
-    </div>
+  </div>
+  <div class="container contentFooter">
+      <section>
+        &copy 2015 Mail the Horse
+      </section>
   </div>
   </body>
 </html>
