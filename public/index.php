@@ -62,7 +62,7 @@ $app->get("/", $authenticate($app), function () use ($app) {
         array(
             "configs" => $configs,
             "section" => "home",
-            "instagramData" => $instagramData->getRecentMedia($configs['instagram']['user_id'], 3, 350)
+            "instagramData" => $instagramData->getRecentMedia($configs['instagram']['user_id'], 3, 325)
         ),
         200
     );

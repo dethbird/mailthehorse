@@ -4,6 +4,10 @@ body {
     font-family: 'Quicksand', sans-serif;
     padding-bottom: 50px;
 }
+hr {
+    background-color: #202826;
+    border: 1px solid;
+}
 blockquote {
     font-size: 16px;
 }
@@ -14,8 +18,13 @@ h1,h2,h3,h4,h5 {
 }
 section {
     text-shadow: 1px 2px 4px rgba(0,0,0,0.15);
+    text-align: center;
+}
+iframe {
+    display: inline-block !important;
 }
 section blockquote {
+    display: inline-block;
     overflow: auto;
     text-overflow: ellipsis;
 }
@@ -29,11 +38,12 @@ header h1 {
     box-shadow: 1px 2px 4px rgba(0,0,0,0.15);
     text-shadow: 1px 2px 2px rgba(0,0,0,0.15);
 }
-.column-left {
-    width: 360px;
+.feed-container {
+    width: 380px;
+    background-image: url('../img/1200/feed.background.jpg');
 }
 .column {
-    width: 640px;
+    width: 700px;
     display: inline-block;
     vertical-align: top;
 }
@@ -73,14 +83,16 @@ a.active {
     color: white;
 }
 .contentBody h1,h2,h3,h4 {
-    text-shadow: 1px 2px 6px rgba(0,0,0,0.65);
+    text-shadow: 1px 2px 6px rgba(0,0,0,0.25);
 }
 
 #contact_form {
     padding: 35px;
+    margin-left: 230px;
+    text-align: left;
 }
 #main {
-    padding-top: 279px;
+    padding-top: 266px;
 }
 #menu_container {
     width: 100%;
@@ -93,10 +105,14 @@ a.active {
     background-image: url('../img/1200/menu.background.jpg');
     padding: 10px 0px 10px 0px;
 }
-#menu_items img {
-    padding:10px 5px 5px 5px;
+.social_menu_items {
+    margin-left: 150px;
+    padding-top: 5px;
 }
-#menu_items a {
+.social_menu_items img {
+    padding-right: 5px;
+}
+.menu_items a {
     color: white;
     padding:10px 10px 5px 10px;
     font-size: 24px;
@@ -104,7 +120,7 @@ a.active {
     text-decoration: none;
     display: inline-block;
 }
-#menu_items a:hover {
+.menu_items a:hover {
     border-bottom: 2px solid #799691;
 }
 #newsletter_form {
@@ -114,7 +130,15 @@ a.active {
     margin-left: 875px;
     text-align: left;
 }
+#newsletter_form label {
+    color: white;
+}
 
+#about img {
+    max-width:800px;
+    height: auto;
+
+}
 
 /* min-width: 768 */
 @media screen and (min-width:0px) {

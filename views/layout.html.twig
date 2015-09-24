@@ -95,18 +95,19 @@
             <label for="email">Newsletter: </label><br />
             <input type="email" class="form-control input-sm" name="email" id="email" placeholder="Email"/> <button type="submit" class="btn btn-default btn-sm">Subscribe</button>
           </div>
+          <div class="row social_menu_items">
+            <a href="http://instagram.com/mailthehorse" target="_blank"><img src="/img/1200/instagram.png"></a>
+            <a href="http://facebook.com/mailthehorse" target="_blank"><img src="/img/1200/facebook-square.png"></a>
+            <a href="http://twitter.com/mailthehorse" target="_blank"><img src="/img/1200/twitter.png"></a>
+          </div>
         </form>
       </div>
       <a href="/"><img src="/img/1200/logo.png" /></a>
-      <div id="menu_items">
-
+      <div class="menu_items">
         <a href="/music" {% if section=="music" %}class="active"{% endif %}>Music.</a>
         <a href="/about" {% if section=="about" %}class="active"{% endif %}>About.</a>
         <a href="/shows" {% if section=="shows" %}class="active"{% endif %}>Shows.</a>
         <a href="/contact" {% if section=="contact" %}class="active"{% endif %}>Contact.</a>
-        <a href="http://instagram.com/mailthehorse" target="_blank"><img src="/img/1200/instagram-32.png"></a>
-        <a href="http://facebook.com/mailthehorse" target="_blank"><img src="/img/1200/facebook-3-32.png"></a>
-        <a href="http://twitter.com/mailthehorse" target="_blank"><img src="/img/1200/twitter-32.png"></a>
       </div>
     </div>
   </div>
