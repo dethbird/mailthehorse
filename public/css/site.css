@@ -134,7 +134,7 @@ a.active {
 .menu_items a:hover {
     border-bottom: 2px solid #799691;
 }
-#newsletter_form {
+#newsletter_form_container {
     z-index: 100;
     position: absolute;
     width: 600px;
@@ -177,7 +177,7 @@ a.active {
     .feed-container {
         width: 200px;
     }
-    #newsletter_form {
+    #newsletter_form_container {
         margin-left: 535px;
     }
     #newsletter_form input[type="email"] {
@@ -231,7 +231,7 @@ a.active {
     #main {
         padding-top: 266px;
     }
-    #newsletter_form {
+    #newsletter_form_container {
         margin-left: 705px;
     }
     #newsletter_form input[type="email"] {
@@ -276,7 +276,7 @@ a.active {
     #main {
         padding-top: 266px;
     }
-    #newsletter_form {
+    #newsletter_form_contaner {
         margin-left: 875px;
     }
     #newsletter_form input[type="email"] {

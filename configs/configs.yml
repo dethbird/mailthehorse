@@ -1,5 +1,22 @@
+#Mail the Horse
 google_api:
   key: "AIzaSyCybIgvVt-vmF47yFzmKqGYXHe8r1LOzJs"
 instagram:
   client_id: "a6c4e37cd91b4020a09a74a40cf836d6"
   user_id: "363053413"
+mailchimp:
+    key: "bc34c45d07d6cf11bb2f224274d6f932-us10"
+    lists:
+        newsletter: 87175aa44a
+        website: c628d810b8
+
+# #Dethbird
+# google_api:
+#   key: "AIzaSyCybIgvVt-vmF47yFzmKqGYXHe8r1LOzJs"
+# instagram:
+#   client_id: "a6c4e37cd91b4020a09a74a40cf836d6"
+#   user_id: "363053413"
+# mailchimp:
+#     key: "c63491c580a92c64a042227a0ebc675d-us11"
+#     lists:
+#         newsletter: bb959aa850

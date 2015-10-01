@@ -107,17 +107,21 @@ $app->get("/music", $authenticate($app), function () use ($app) {
     );
 });
 
-$app->get("/newsletter", $authenticate($app), function () use ($app) {
+$app->post("/newsletter", $authenticate($app), function () use ($app) {
 
     $configs = $app->container->get('configs');
-    $app->render(
-        'partials/newsletter.html.twig',
+
+    $mailchimp = new Mailchimp($configs['mailchimp']['key']);
+    $response = $mailchimp->call('/lists/subscribe', 
         array(
-            "configs" => $configs,
-            "section" => "newsletter"
-        ),
-        200
+            "id" => $configs['mailchimp']['lists']['newsletter'],
+            "email" => array("email"=>"rishi.satsangi@gmail.com")
+        )
     );
+
+    $app->response->headers->set('Content-Type', 'application/json');
+    $app->response->setBody(json_encode($response));
+
 });
 
 
