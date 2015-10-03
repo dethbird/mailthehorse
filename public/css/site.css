@@ -100,7 +100,11 @@ a.active {
 .contentBody h1,h2,h3,h4 {
     text-shadow: 1px 2px 6px rgba(0,0,0,0.25);
 }
-
+.created_by,
+.created_by a {
+    font-size: 12px;
+    color: #987a55;
+}
 #contact_form {
     padding: 35px;
     margin-left: 230px;
@@ -276,7 +280,7 @@ a.active {
     #main {
         padding-top: 266px;
     }
-    #newsletter_form_contaner {
+    #newsletter_form_container {
         margin-left: 875px;
     }
     #newsletter_form input[type="email"] {
