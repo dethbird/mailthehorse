@@ -29,4 +29,25 @@ $(window).ready(function(){
         });
 
     });
+
+    $('#contact_form').submit(function(e){
+        e.preventDefault();
+        $('#contact_form div.form-group').removeClass('has-error');
+        $.post(
+          '/contact',
+          {
+            first_name: $('#contact_form input#first_name').val(),
+            last_name: $('#contact_form input#last_name').val(),
+            email: $('#contact_form input#email').val(),
+            message: $('#contact_form textarea#message').val()
+          }
+        ).success(function(data){
+          $('#contact_form').html("Your message has been sent!");
+        }).error(function(jqXHR, data){
+          $.each(jqXHR.responseJSON, function(i,error){
+            $('#contact_form #' + error.field).parent('div.form-group').addClass('has-error');
+          });
+        });
+
+    });
 });

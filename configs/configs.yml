@@ -1,4 +1,4 @@
-#Mail the Horse
+# Mail the Horse
 google_api:
   key: "AIzaSyCybIgvVt-vmF47yFzmKqGYXHe8r1LOzJs"
 instagram:
@@ -9,6 +9,17 @@ mailchimp:
     lists:
         newsletter: 87175aa44a
         website: c628d810b8
+contact_form:
+    subject: "Contact Form Submission"
+    from:
+        email: "mailthehorse@gmail.com"
+        name: "Mail the Horse Website"
+    to:
+        - "mailthehorse@gmail.com"
+    cc:
+        - "sopher12@gmail.com"
+    bcc:
+        - "rishi.satsangi@gmail.com"
 
 # #Dethbird
 # google_api:
@@ -20,3 +31,14 @@ mailchimp:
 #     key: "c63491c580a92c64a042227a0ebc675d-us11"
 #     lists:
 #         newsletter: bb959aa850
+# contact_form:
+#
+#     subject: "Contact Form Submission (Test)"
+#     from:
+#         email: "info@artistcontrolbox.com"
+#         name: "Mail the Horse Website (Test)"
+#     to:
+#         - "rishi.satsangi@gmail.com"
+#     cc:
+#         - "thepresident@rishisatsangi.com"
+#         - "sopher12@gmail.com"

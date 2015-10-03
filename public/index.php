@@ -94,6 +94,65 @@ $app->get("/contact", $authenticate($app), function () use ($app) {
     );
 });
 
+$app->post("/contact", $authenticate($app), function () use ($app) {
+
+    $configs = $app->container->get('configs');
+    $errors = array();
+
+    if(trim($app->request->params('first_name')=="")) {
+        $errors[] = array(
+            "field" => "first_name",
+            "message" => "Please enter your first name"
+        );
+    }
+    if(trim($app->request->params('last_name')=="")) {
+        $errors[] = array(
+            "field" => "last_name",
+            "message" => "Please enter your last name"
+        );
+    }
+    if(trim($app->request->params('email')=="")) {
+        $errors[] = array(
+            "field" => "email",
+            "message" => "Please enter your email"
+        );
+    }
+    if(trim($app->request->params('message')=="")) {
+        $errors[] = array(
+            "field" => "message",
+            "message" => "Please enter your message"
+        );
+    }
+
+    $app->response->headers->set('Content-Type', 'application/json');
+    if (count($errors)>0) {
+        $app->response->setStatus(400);
+        $app->response->setBody(json_encode($errors));
+    } else {
+        $mail = new PHPMailer();
+        $mail->setFrom($configs['contact_form']['from']['email'], $configs['contact_form']['from']['name']);
+        foreach ($configs['contact_form']['to'] as $email) {
+            $mail->addAddress($email);
+        }
+        foreach ($configs['contact_form']['cc'] as $email) {
+            $mail->addCC($email);
+        }
+        foreach ($configs['contact_form']['bcc'] as $email) {
+            $mail->addBCC($email);
+        }
+        $mail->Subject = $configs['contact_form']['subject'];
+        $html = $app->view->render(
+            'partials/email/contact.html.twig',
+            $app->request->params()
+        );
+        $mail->msgHTML($html);
+        $mail->send();
+        $app->response->setBody(json_encode(array("status" => "success")));
+        $app->response->setStatus(200);
+    }
+
+});
+
 $app->get("/music", $authenticate($app), function () use ($app) {
 
     $configs = $app->container->get('configs');
@@ -112,7 +171,7 @@ $app->post("/newsletter", $authenticate($app), function () use ($app) {
     $configs = $app->container->get('configs');
 
     $mailchimp = new Mailchimp($configs['mailchimp']['key']);
-    $response = $mailchimp->call('/lists/subscribe', 
+    $response = $mailchimp->call('/lists/subscribe',
         array(
             "id" => $configs['mailchimp']['lists']['newsletter'],
             "email" => array("email"=>"rishi.satsangi@gmail.com")
