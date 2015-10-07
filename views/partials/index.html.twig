@@ -43,39 +43,17 @@
             <h1>News</h1>
           </header>
 
-          <a href="http://www.relix.com/blogs/detail/video_premiere_mail_the_horse_flowers_keys_gasoline" target="_blank"><h3>Relix Video Premiere: Mail the Horse “Flowers, Keys & Gasoline”</h3></a>
-          <small>September 23, 2015</small><br />
-
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/T1aI9i1M2Rs" frameborder="0" allowfullscreen class="youtube"></iframe>
+          {% for post in wordpressData %}
 
           <hr/>
 
+          <a href="{{post.link}}" target="_blank"><h3>{{post.title.rendered|raw}}</h3></a>
+          <small>{{post.date|date("F j, Y")}}</small><br />
 
-          <a href="http://www.daytrotter.com/#!/concert/mail-the-horse/21022297-373890523" target="_blank"><h3>Daytrotter Studio Session: Daytrotter Studio, Rock Island, IL</h3></a>
-          <small>August 11, 2015</small><br />
-          <br />
-          <a href="http://www.daytrotter.com/#!/concert/mail-the-horse/21022297-373890523" target="_blank"><img src="/img/press/daytrotter-session-august-11-2015.jpg" /></a>
+          {{post.content.rendered|raw}}
 
-          <hr/>
-
-          <a href="http://www.brooklynvegan.com/archives/2015/06/mail_the_horse.html" target="_blank"><h3>Brooklyn Vegan: Mail the Horse releasing 'Planet Gates,' celebrating at Knitting Factory w/ Sam Cohen & more before tour (dates, streams)</h3></a>
-          <small>June 17, 2015</small><br />
-          <blockquote>Brooklyn's Mail the Horse have been kicking around since 2010 or so, and their rootsy sound has found them on bills with Felice Brothers, Spirit Family Reunion, John Wesley Coleman and other kindred folk. The band's new album, Planet Gates, is out June 23 via Sexual Decade and is embued with an early '70s rock n' roll spirit, be it the twangy leanings of the Stones and the Kinks during that time, or the gritty street life of Lou Reed. We've got the premiere of "Wasted Sex" which definitely owes a little to Keith Richards. Stream it and another track off the album below...</blockquote>
-          <hr/>
-
-
-           <a href="http://www.spin.com/2015/06/mail-the-horse-holy-motel-magic-stream-new/" target="_blank"><h3>Spin: Mail the Horse Conjure Up ‘Holy Motel Magic’ on New Single</h3></a>
-          <small>June 11, 2015</small><br />
-          <blockquote>New York folk-rock quintet Mail the Horse are prepping the release of their new album Planet Gates, and they’ve just shared a simmering track called “Holy Motel Magic...”</blockquote>
-          <hr/>
-
-          <h3>Planet Gates LP Now Available</h3>
-          <div>
-            <iframe style="border: 0; width: 350px; height: 470px;" src="http://bandcamp.com/EmbeddedPlayer/album=4040365101/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless><a href="http://mailthehorse.bandcamp.com/album/planet-gates">Planet Gates by Mail the Horse</a></iframe>
-          </div>
-          <div>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/wg1VvYCGIwU" frameborder="0" allowfullscreen class="youtube"></iframe>
-          </div>
+          {% endfor %}
+          
         </section>
       </div>
 

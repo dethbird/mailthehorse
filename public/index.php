@@ -57,12 +57,15 @@ $app->get("/", $authenticate($app), function () use ($app) {
 
     $configs = $app->container->get('configs');
     $instagramData = new InstagramData($configs['instagram']['client_id']);
+    $wordpressData = new WordpressData($configs['wordpress']['url']);
+
     $app->render(
         'partials/index.html.twig',
         array(
             "configs" => $configs,
             "section" => "home",
-            "instagramData" => $instagramData->getRecentMedia($configs['instagram']['user_id'], 3, 325)
+            "instagramData" => $instagramData->getRecentMedia($configs['instagram']['user_id'], 3, 325),
+            "wordpressData" => $wordpressData->getPostsByCategoryName("News")
         ),
         200
     );

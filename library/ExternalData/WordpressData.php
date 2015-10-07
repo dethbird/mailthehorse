@@ -44,4 +44,29 @@ class WordpressData extends DataBase {
             return $cache;
         }
     }
+
+    /**
+     *
+     * @return array() get posts by category name
+     */
+    public function getPostsByCategoryName($categoryName)
+    {
+        $cacheKey = "wordpressPostsByCategoryName:".$categoryName;
+        $cache = $this->retrieveCache($cacheKey);
+
+        if (!$cache) {
+            $response = $this->httpClient->get($this->baseUrl . '/wp-json/wp/v2/posts/?filter[category_name]=' . $categoryName)->send();
+            $response = json_decode($response->getBody(true));
+
+            if (isset($response->featured_image)) {
+                $mediaResponse = $this->httpClient->get($this->baseUrl . '/wp-json/wp/v2/media/' . $response->featured_image)->send();
+                $response->featured_image = json_decode($mediaResponse->getBody(true));
+            }
+
+            $this->storeCache($cacheKey, $response);
+            return $response;
+        } else {
+            return $cache;
+        }
+    }
 }

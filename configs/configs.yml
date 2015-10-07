@@ -4,6 +4,8 @@ google_api:
 instagram:
   client_id: "a6c4e37cd91b4020a09a74a40cf836d6"
   user_id: "363053413"
+wordpress:
+    url: http://blog.mailthehorse.com 
 mailchimp:
     key: "bc34c45d07d6cf11bb2f224274d6f932-us10"
     lists:
