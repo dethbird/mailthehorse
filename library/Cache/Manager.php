@@ -2,7 +2,7 @@
 
 class CacheManager {
 
-    private function filepath($key) 
+    private function filepath($key)
     {
         return APPLICATION_PATH . "/cache/" . $key;
     }
@@ -10,6 +10,9 @@ class CacheManager {
     public function retrieve($key)
     {
         if(file_exists($this->filepath($key))) {
+            if (time() - filectime($this->filepath($key)) > 14400){
+                return false;
+            }
             return unserialize(file_get_contents($this->filepath($key)));
         } else {
             return false;
